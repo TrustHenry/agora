@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/barcode" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/base32" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/bitblob" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/crypto" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/d2sqlite3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/diet-ng" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/dyaml" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/eventcore" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/libsodiumd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/localrest" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/mir-linux-kernel" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/ocean" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/openssl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/serialization" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/stdx-allocator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/taggedalgebraic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/tinyendian" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/tracy" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/vibe-core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/submodules/vibe.d" vcs="Git" />
+  </component>
+</project>

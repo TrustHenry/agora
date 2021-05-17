@@ -1,0 +1,91 @@
+################################################################################
+##                             Network interface                              ##
+################################################################################
+node:
+  # Run using test GenesisBlock and should use test addresses
+  testing: true
+  min_listeners: 7
+  max_listeners: 10
+  retry_delay: 50
+  max_retries: 25
+  timeout: 5000
+  # Path to the data directory (if the path doesn't exist it will be created)
+  data_dir: .cache
+  block_interval_sec: 5
+  block_catchup_interval_secs: 5
+  relay_tx_max_num : 0
+  relay_tx_interval_secs : 0
+  relay_tx_min_fee : 0
+  relay_tx_cache_exp_secs : 1200
+
+interfaces:
+  - type: http
+    address: 0.0.0.0
+    port:    2826
+  - type: http
+    address: 0.0.0.0
+    port:    2735
+
+consensus:
+  validator_cycle: 20
+  slash_penalty_amount: 10000
+
+################################################################################
+##                             Validator configuration                        ##
+## The server can operate in two modes: full node and validator node.         ##
+## The full node does not participate in consensus,                           ##
+## it only replicates the state of the blockchain.                            ##
+################################################################################
+validator:
+  # Whether or not we should act as a validator
+  # When validating, the `seed` of an eligible account is required
+  # An eligible account has at least 40k coins frozen in it
+  enabled: true
+  # This is a randomly generated keypair
+  # If this node is not a validator, this will be ignored
+  #
+  # DO NOT USE THOSE VALUES ANYWHERE
+  # Public address:  GDNODE2JBW65U6WVIOESR3OTJUFOHPHTEIL4GQINDB3MVB645KXAHG73
+  seed: SDV3GLVZ6W7R7UFB2EMMY4BBFJWNCQB5FTCXUMD5ZCFTDEVZZ3RQ2BZI
+  # Address of the name registry
+  registry_address: disabled
+
+################################################################################
+##                          Administrative interface                          ##
+################################################################################
+admin:
+  enabled: true      # `false` by default
+  address: 0.0.0.0   # Private
+  port:    2827      # 0xB0B
+
+################################################################################
+##                               Node discovery                               ##
+##                                                                            ##
+## When the network first starts, we need to connect to some peers to learn   ##
+## the topology and find a safe intersection to listen to, and, if we are     ##
+## a validator, to insert ourselves.                                          ##
+################################################################################
+network:
+  # Supported value: IPv4, IPv6
+  - http://node-0:2826
+
+################################################################################
+##                               Logging options                              ##
+################################################################################
+logging:
+  root:
+    level: Info
+
+################################################################################
+##                               Event Handlers                               ##
+################################################################################
+event_handlers:
+  # URLs to push a data when a block is externalized. (path is "/block_externalized")
+  block_externalized:
+    - http://127.0.0.1:2828/block_externalized
+  # URLs to push a data when a pre-image is updated. (path is "/preimage_received")
+  preimage_received:
+    - http://127.0.0.1:2828/preimage_received
+  # URLs to push a data when a transaction is updated. (path is "/transaction_received")
+  transaction_received:
+    - http://127.0.0.1:2828/transaction_received
